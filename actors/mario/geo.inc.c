@@ -30,7 +30,7 @@ const GeoLayout mario_geo_face_and_wings[] = {
                 GEO_DISPLAY_LIST(LAYER_OPAQUE, mario_cap_off_eyes_dead),
             GEO_CLOSE_NODE(),
         GEO_CLOSE_NODE(),
-        GEO_TRANSLATE_ROTATE(0, 142, -51, -126, 22, -40, -135),
+        GEO_TRANSLATE_ROTATE(0, 182, -51, -110, 22, -40, -135),
         GEO_OPEN_NODE(),
             GEO_ASM(0, geo_mario_rotate_wing_cap_wings),
             GEO_ROTATION_NODE(0x00, 0, 0, 0),
@@ -111,7 +111,7 @@ const GeoLayout mario_geo_body[] = {
             GEO_OPEN_NODE(),
                 GEO_ANIMATED_PART(LAYER_OPAQUE, 68, 0, 0, mario_torso),
                 GEO_OPEN_NODE(),
-                    GEO_ANIMATED_PART(LAYER_OPAQUE, 87, 0, 0, NULL),
+                    GEO_ANIMATED_PART(LAYER_OPAQUE, 87, 0, 100, NULL),
                     GEO_OPEN_NODE(),
                         GEO_BRANCH(1, mario_geo_face_and_wings), // stops sharing because faces has its own dl
                     GEO_CLOSE_NODE(),
@@ -228,7 +228,7 @@ const GeoLayout mario_geo_medium_poly_body[] = {
             GEO_OPEN_NODE(),
                 GEO_ANIMATED_PART(LAYER_OPAQUE, 68, 0, 0, mario_medium_poly_torso),
                 GEO_OPEN_NODE(),
-                    GEO_ANIMATED_PART(LAYER_OPAQUE, 87, 0, 0, NULL),
+                    GEO_ANIMATED_PART(LAYER_OPAQUE, 87, 0, 100, NULL),
                     GEO_OPEN_NODE(),
                         GEO_BRANCH(1, mario_geo_face_and_wings), // stops sharing because faces has its own dl - medium poly mario uses high poly face
                     GEO_CLOSE_NODE(),

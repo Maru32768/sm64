@@ -931,7 +931,7 @@ s32 act_ground_pound(struct MarioState *m) {
             }
         }
 
-        m->vel[1] = -50.0f;
+        m->vel[1] = -200.0f;
         mario_set_forward_vel(m, 0.0f);
 
         set_mario_animation(m, m->actionArg == 0 ? MARIO_ANIM_START_GROUND_POUND

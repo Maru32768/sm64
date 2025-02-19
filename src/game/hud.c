@@ -13,6 +13,7 @@
 #include "area.h"
 #include "save_file.h"
 #include "print.h"
+#include "engine/behavior_script.h"
 
 /* @file hud.c
  * This file implements HUD rendering and power meter animations.
@@ -284,12 +285,14 @@ void render_hud_coins(void) {
  */
 void render_hud_stars(void) {
     s8 showX = 0;
+    s32 stars = 0;
 
     if (gHudFlash == 1 && gGlobalTimer & 8) {
         return;
     }
 
-    if (gHudDisplay.stars < 100) {
+    stars = random_u16();
+    if (stars < 100) {
         showX = 1;
     }
 
@@ -298,7 +301,7 @@ void render_hud_stars(void) {
         print_text(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(HUD_STARS_X) + 16, HUD_TOP_Y, "*"); // 'X' glyph
     }
     print_text_fmt_int((showX * 14) + GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(HUD_STARS_X - 16),
-                       HUD_TOP_Y, "%d", gHudDisplay.stars);
+                       HUD_TOP_Y, "%d", stars);
 }
 
 /**
